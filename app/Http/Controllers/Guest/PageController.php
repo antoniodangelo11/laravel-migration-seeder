@@ -9,7 +9,7 @@ use App\Http\Controllers\Controller;
 class PageController extends Controller
 {
     public function index() {
-        $trains = Train::all()->filter(function ($train){
+        $trains = Train::where('departure_date', 'LIKE', '% 13:%' )->get()->filter(function ($train){
             return !$train->in_time || !$train->deleted;
         });
 
