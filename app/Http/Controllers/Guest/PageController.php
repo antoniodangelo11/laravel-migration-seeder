@@ -9,7 +9,9 @@ use App\Http\Controllers\Controller;
 class PageController extends Controller
 {
     public function index() {
-        $trains = Train::all();
+        $trains = Train::all()->filter(function ($train){
+            return !$train->in_time || !$train->deleted;
+        });
 
         return view('index', [
             'trains' => $trains
