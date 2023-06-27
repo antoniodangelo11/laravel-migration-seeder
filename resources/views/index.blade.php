@@ -6,7 +6,13 @@
         <title>Laravel</title>
         @vite('resources/js/app.js')
     </head>
+
     <body>
-        
+        <ul>
+            @foreach ($trains as $train)
+                <li>{{ $train->company }}</li>
+                <li>{{ $train->departure_station }}</li>
+            @endforeach
+        </ul>
     </body>
 </html>
