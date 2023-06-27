@@ -12,6 +12,13 @@
             @foreach ($trains as $train)
                 <li>{{ $train->company }}</li>
                 <li>{{ $train->departure_station }}</li>
+                <li>{{ $train->arrival_station }}</li>
+                <li>{{ $train->departure_date }}</li>
+                <li>{{ $train->arrival_date }}</li>
+                <li>{{ $train->train_code }}</li>
+                <li>{{ $train->number_of_carriages }}</li>
+                <li>{{ $train->in_time }}</li>
+                <li>{{ $train->deleted }}</li>
             @endforeach
         </ul>
     </body>
