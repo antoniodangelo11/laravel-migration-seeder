@@ -18,17 +18,18 @@ class TrainsTableSeeder extends Seeder
     public function run(Faker $faker) 
     {
         for ($i = 0; $i <= 100; $i++) {
-            Train::create
-            ([
-                'company' => $faker->bothify('??-########'),
+            Train::create([
+                'company' => $faker->company(),
                 'departure_station' => $faker->city(),
-                'arrival_station' =>  $faker->city('######'),
-                'departure_time' => $faker->city(),
-                'arrival_time' => $faker->state(),
-                'train_code' => rand(25, 300),
-                'number_of_carriages' => rand(1, 25),
-                'in_time' => rand(1, 4),
-                'deleted' => $faker->randomElement(),
+                'arrival_station' => $faker->city(),
+                'departure_time' => $faker->time(),
+                'departure_date' => $faker->dateTime(),
+                'arrival_time' => $faker->time(),
+                'arrival_date' => $faker->dateTime(),
+                'train_code' => $faker->bothify('??-###'),
+                'number_of_carriages' => rand(1, 20),
+                'in_time' => $faker->boolean(),
+                'deleted' => $faker->boolean(),
             ]);
         }
     }
