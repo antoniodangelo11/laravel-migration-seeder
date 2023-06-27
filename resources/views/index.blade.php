@@ -3,11 +3,12 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Laravel</title>
+        <title>Laravel Trains</title>
         @vite('resources/js/app.js')
     </head>
 
-    <body>
+    <body class="bg-dark">
+        <h1 class="text-center text-danger">LARAVEL TRAINS</h1>
         <table class="table table-dark">
             <thead>
                 <tr>
@@ -32,8 +33,8 @@
                         <td>{{ $train->arrival_date }}</td>
                         <td>{{ $train->train_code }}</td>
                         <td>{{ $train->number_of_carriages }}</td>
-                        <td>{{ $train->in_time }}</td>
-                        <td>{{ $train->deleted }}</td>
+                        <td>{{ $train->in_time ? 'Yes' : 'No' }}</td>
+                        <td>{{ $train->deleted ? 'Yes' : 'No' }}</td>
                     </tr>
                 @endforeach
             </tbody>
