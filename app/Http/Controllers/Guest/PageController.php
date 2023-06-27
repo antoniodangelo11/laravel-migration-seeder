@@ -17,4 +17,4 @@ class PageController extends Controller
             'trains' => $trains
         ]);
     }
-}
+};
